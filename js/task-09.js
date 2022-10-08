@@ -3,16 +3,7 @@ function getRandomHexColor() {
 }
 
 document.querySelector(".change-color").addEventListener("click", () => {
-  const changeColor =
-    ("click",
-    () => {
-      return (
-        "#" +
-        Math.floor(Math.random() * 16777215)
-          .toString(16)
-          .padStart(6, "0")
-          .toUpperCase()
-      );
-    });
-  document.body.style.backgroundColor = changeColor();
+  const color = getRandomHexColor();
+  document.body.style.backgroundColor = color;
+  document.querySelector(".color").textContent = color;
 });
