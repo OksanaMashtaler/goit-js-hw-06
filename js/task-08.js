@@ -1,9 +1,3 @@
-// const formRef = document.querySelector(".login-form");
-// formRef.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   console.log(".login-form click");
-// });
-
 const formRef = document.querySelector(".login-form");
 
 formRef.addEventListener("submit", handleSubmit);
