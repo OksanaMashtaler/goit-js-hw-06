@@ -13,10 +13,21 @@ const images = [
   },
 ];
 
-images.forEach((element) => {
-  const imgItemRef = document.querySelector(".gallery");
-  imgItemRef.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src="${element.url}" alt="${element.alt}" width=350px height = 300px></li>`
-  );
-});
+// images.forEach((element) => {
+//   const imgItemRef = document.querySelector(".gallery");
+//   imgItemRef.insertAdjacentHTML(
+//     "afterbegin",
+//     `<li><img src="${element.url}" alt="${element.alt}" width=350px height = 300px></li>`
+//   );
+// });
+
+const galleryEl = document.querySelector(".gallery");
+
+const markup = images.map(
+  (image) => `
+  <li class='gallery__item'>
+    <img class='gallery__image' src='${image.url}' alt='${image.alt}' width=100% height = 100%>
+  </li>
+  `
+);
+galleryEl.insertAdjacentHTML("afterbegin", markup.join(""));
